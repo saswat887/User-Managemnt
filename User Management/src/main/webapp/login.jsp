@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" isErrorPage="true"%>
+	pageEncoding="ISO-8859-1" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +10,12 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+
 </style>
 </head>
 <body>
 <%@ include file="components/navbar.jsp" %>
-	<div class="container p-5">
+	<div class="container p-5 ">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="car paint-card">
@@ -24,6 +25,9 @@
 							String str=(String)session.getAttribute("fail");
 							if(str!=null){
 						%>
+							<%-- <script type="text/javascript">
+								alert("Wrong Email or Password")
+							</script>--%>
 							<p class="text-center text-danger fs-5"><%=str %></p>
 						<%
 							session.removeAttribute("fail");
@@ -31,7 +35,7 @@
 						%>
 						<form action="login_user" method="post">
 						<div class="mb-3">
-								<label class="form-label">UserName</label> <input
+								<label class="form-label">Email</label> <input
 									name="email" type="text" class="form-control" required>
 							</div>
 							<div class="mb-3">

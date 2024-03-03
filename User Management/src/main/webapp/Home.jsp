@@ -18,10 +18,7 @@
 <body>
 	<%@ include file="components/user_home_navbar.jsp" %>
 	<h1 class="text-center">Welcome to Home Page</h1>
-	<%
-		session.setAttribute("log", "success");
-	%>
-	<a class="btn btn-md btn-primary"  href="add_user.jsp">Add User</a>
+	<center><a class="btn btn-md btn-primary"  href="add_user.jsp">Add User</a></center>
 	<div class="container-fluid p-3">
 		<div class="row">
 			<div class="col-md-12">

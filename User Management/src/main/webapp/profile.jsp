@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.org.dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="login.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,17 +38,18 @@
 											<%
 											UserDao doa=new UserDao();
 											List<User> users=doa.fetchAllUsers();
-											User user =(User) session.getAttribute("userObj");
+											User user =(User) session.getAttribute("userObj");		
 											for(User u:users){
 												if(user.getId()!=u.getId())
 													continue;
+								
 											%><tr>
 											<td><%=u.getName() %>	</td>
 											<td><%=u.getAge() %>	</td>
 											<td><%=u.getMobile() %>	</td>
 											<td><%=u.getEmail() %>	</td>
 											<td><a class="btn btn-primary" href="update_user.jsp?id=<%=u.getId()%>">Update</a>
-											<a class="btn btn-danger" href="delete_user.jsp?id=<%=u.getId()%>">Delete</a></td>
+										<%--	<a class="btn btn-danger" href="deleteuser.jsp?id=<%=u.getId()%>">Delete</a> --%></td>
 											</tr>
 										<%
 										}

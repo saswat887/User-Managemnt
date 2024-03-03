@@ -18,10 +18,9 @@
 <%@ include file="components/navbar.jsp" %>
 
 	<%
-	 UserDao dao = new UserDao();
+	UserDao dao = new UserDao();
 	Integer id=Integer.parseInt(request.getParameter("id"));
-		//out.println(id);
-	 dao.deleteUserById(id);
+	dao.deleteUserById(id);
 	response.sendRedirect("Home.jsp");
 	%>
 

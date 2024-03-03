@@ -1,7 +1,7 @@
 <%@page import="com.org.dto.User"%>
 <%@page import="com.org.dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" errorPage="login.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +22,6 @@
 	Integer id=Integer.parseInt(request.getParameter("id"));
 	//out.println(id);
 	User u = dao.fetchUserById(id);
-	
-
-
 %>
 
 	<div class="container p-5">
